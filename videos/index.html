@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Videos — Mind Over Batter</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bitter:wght@400;700;800&family=Inter:wght@400;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/assets/styles.css" />
+</head>
+<body>
+<header>
+<div class="container nav">
+<a class="brand" href="/"><img src="/assets/logo.png" alt="logo" /><span>Mind Over Batter</span></a>
+<nav>
+<a class="btn" href="/">Home</a>
+</nav>
+</div>
+</header>
+
+
+<main class="section container">
+<h1 class="headline">Videos</h1>
+<p class="sub">Latest uploads and greatest hits. Subscribe on YouTube for premieres and behind‑the‑scenes.</p>
+
+
+<div class="grid">
+<!-- Duplicate a card per video; replace VIDEO_ID and titles -->
+<article class="card">
+<a class="thumb" href="https://www.youtube.com/watch?v=VIDEO_ID" target="_blank" rel="noopener"></a>
+<div class="card-body">
+<h3>Cinnamon Roll Crown Cake</h3>
+<div class="meta">8 min • Recipe</div>
+</div>
+</article>
+</div>
+</main>
+
+
+<footer>
+<div class="container footer-inner">
+<span>© <span id="year"></span> Mind Over Batter</span>
+<span class="motto">“Make the miscakes so you don’t have to.”</span>
+</div>
+</footer>
+
+
+<script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+</body>
+</html>

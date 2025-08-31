@@ -1,195 +1,61 @@
 <!doctype html>
-<html lang="en">
-<head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Mind Over Batter — Cakes, Chaos, and Cinematic Bakes</title>
-  <meta name="description" content="Mind Over Batter: wildly creative cake videos, dad humor, maximum flavor." />
-  <meta property="og:title" content="Mind Over Batter — Cakes, Chaos, and Cinematic Bakes" />
-  <meta property="og:description" content="Wildly creative cake videos, zero American buttercream, maximum flavor." />
-  <meta property="og:type" content="website" />
-  <meta property="og:url" content="https://www.mindoverbattervids.com" />
-  <meta name="theme-color" content="#3b2a1a" />
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Bitter:wght@400;700;800&family=Inter:wght@400;600&display=swap" rel="stylesheet">
-  <style>
-    :root{
-      --cream:#f6eadf;
-      --cream-2:#fff7ef;
-      --brown:#3b2a1a;
-      --espresso:#23160e;    /* darker accent for text/borders */
-      --cocoa:#6a4b33;
-      --gold:#b48a4d;        /* darker brass */
-      --ink:#0e0a06;         /* deeper body text */
-      --teal:#4aa3a3;
-      --charcoal:#1c1a18;
-    }
-    *{box-sizing:border-box}
-    html,body{margin:0; padding:0; background:var(--cream); color:var(--ink); font-family:Inter, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif;}
-    h1,h2,h3, .brand{font-family:Bitter, Georgia, serif; color:var(--brown)}
-    a{color:var(--cocoa); text-decoration:none}
-    a:hover{color:var(--brown); text-decoration:underline}
-    .container{max-width:1100px; margin:0 auto; padding:0 20px}
-    header{position:sticky; top:0; z-index:10; background:linear-gradient(180deg, rgba(246,234,223,0.95), rgba(246,234,223,0.85)); border-bottom:1px solid rgba(0,0,0,0.05); backdrop-filter:saturate(150%) blur(6px)}
-    .nav{display:flex; align-items:center; justify-content:space-between; padding:14px 0}
-    .nav .brand{display:flex; align-items:center; gap:12px; font-weight:800; letter-spacing:0.3px}
-    .brand img{width:46px; height:46px; border-radius:10px; box-shadow:0 2px 0 rgba(0,0,0,0.1)}
-    .nav a.btn{padding:10px 14px; border-radius:999px; border:2px solid var(--brown); color:var(--brown); font-weight:600}
-    .nav a.btn:hover{background:var(--brown); color:#fff}
-    .hero{padding:64px 0 36px}
-    .hero-inner{display:grid; grid-template-columns:1.1fr 0.9fr; gap:28px; align-items:center}
-    .hero-card{background:var(--cream-2); border:1px solid rgba(0,0,0,0.08); border-radius:20px; padding:26px; box-shadow:0 12px 30px rgba(59,42,26,0.08)}
-    .tag{display:inline-block; padding:6px 10px; border-radius:999px; background:#fff; border:1px solid rgba(0,0,0,0.06); color:var(--cocoa); font-size:12px; font-weight:600; letter-spacing:0.2px}
-    .headline{font-size:42px; line-height:1.05; margin:14px 0 8px}
-    .sub{font-size:16px; color:#3a342e}
-    .cta-row{margin-top:18px; display:flex; gap:12px; flex-wrap:wrap}
-    .btn{display:inline-block; padding:12px 16px; border-radius:14px; font-weight:700; border:2px solid var(--brown); color:var(--brown); background:#fff}
-    .btn.primary{background:var(--brown); color:#fff}
-    .btn.ghost{background:transparent}
-    .video-wrap{position:relative; width:100%; padding-top:56.25%; border-radius:16px; overflow:hidden; box-shadow:0 10px 28px rgba(0,0,0,0.12); border:1px solid rgba(0,0,0,0.08)}
-    .video-wrap iframe{position:absolute; inset:0; width:100%; height:100%; border:0}
-    .section{padding:44px 0}
-    .section h2{font-size:28px; margin:0 0 10px}
-    .grid{display:grid; grid-template-columns:repeat(3,1fr); gap:18px}
-    .card{background:#fff; border:1px solid rgba(0,0,0,0.08); border-radius:16px; overflow:hidden; box-shadow:0 8px 22px rgba(0,0,0,0.08)}
-    .thumb{aspect-ratio:16/9; background:linear-gradient(135deg, #ffe9cf, #f9d4b1)}
-    .card-body{padding:14px}
-    .card h3{font-size:18px; margin:0 0 4px}
-    .meta{font-size:12px; color:#5b4c41}
-    .about{display:grid; grid-template-columns:0.9fr 1.1fr; gap:24px; align-items:center}
-    .about .panel{background:var(--cream-2); border:1px solid rgba(0,0,0,0.08); border-radius:18px; padding:20px}
-    .about p{margin:0}
-    footer{border-top:1px solid rgba(0,0,0,0.08); padding:24px 0; color:#5b4c41; font-size:14px}
-    .social{display:flex; gap:12px; flex-wrap:wrap}
-    .badge{display:inline-flex; align-items:center; gap:8px; padding:8px 12px; background:#fff; border:1px solid rgba(0,0,0,0.08); border-radius:999px}
-    .featured-recipe{margin-top:32px; background:var(--charcoal); color:#fff; border-radius:16px; padding:22px; box-shadow:0 8px 20px rgba(0,0,0,0.4)}
-    .featured-recipe h2{margin-top:0; color:var(--gold)}
-    .featured-recipe ul{margin:0; padding-left:20px}
-    @media (max-width: 980px){
-      .hero-inner, .about{grid-template-columns:1fr}
-      .grid{grid-template-columns:1fr 1fr}
-      .headline{font-size:34px}
-    }
-    @media (max-width: 620px){
-      .grid{grid-template-columns:1fr}
-    }
-  </style>
-</head>
-<body>
-  <header>
-    <div class="container nav">
-      <a class="brand" href="#">
-        <img src="assets/logo.png" alt="Mind Over Batter logo" />
-        <span>Mind Over Batter</span>
-      </a>
-      <nav>
-        <a class="btn ghost" href="#videos">Videos</a>
-        <a class="btn ghost" href="#recipes">Recipes</a>
-        <a class="btn" href="#about">About</a>
-        <a class="btn primary" href="https://www.youtube.com/@mindoverbattervids" target="_blank" rel="noopener">Subscribe</a>
-      </nav>
-    </div>
-  </header>
+<div class="card-body">
+<h3>Cinnamon Roll Crown Cake</h3>
+<div class="meta">Recipe • 8 min</div>
+</div>
+</article>
+<article class="card">
+<a href="/videos/" class="thumb" aria-label="See more videos"></a>
+<div class="card-body">
+<h3>See More Videos</h3>
+<div class="meta">Browse the full index</div>
+</div>
+</article>
+</div>
+</section>
 
-  <main>
-    <section class="hero">
-      <div class="container hero-inner">
-        <div class="hero-card">
-          <span class="tag">Cakes • Chaos • Cinematic Bakes</span>
-          <h1 class="headline">Wildly creative cakes.<br>Zero American buttercream.</h1>
-          <p class="sub">I’m a dad with a whisk, big ideas, and bigger mistakes (so you don’t have to make them). Watch me build fantasy-level desserts that actually taste unreal.</p>
-          <div class="cta-row">
-            <a class="btn primary" href="#videos">Watch Latest</a>
-            <a class="btn" href="#recipes">Recipe Index</a>
-          </div>
-        </div>
-        <div class="video-wrap" id="featured">
-          <iframe src="https://www.youtube.com/embed/VIDEO_ID?rel=0" title="Featured video" allowfullscreen></iframe>
-        </div>
-      </div>
-    </section>
 
-    <section class="container featured-recipe" id="recipes">
-      <h2>Featured Recipe: Cinnamon Roll Crown Cake</h2>
-      <p>A cinnamon-spiced sponge layered with whipped cream, pecans, and crowned with a fresh cinnamon roll. Decadent, dramatic, and easier than it looks.</p>
-      <h3>Quick Ingredients</h3>
-      <ul>
-        <li>King Arthur AP flour, cinnamon</li>
-        <li>Brown sugar (add-in) & pecans</li>
-        <li>Lightly sweetened whipped cream</li>
-        <li>Cream cheese frosting (226 g base)</li>
-        <li>Fresh cinnamon roll topper</li>
-      </ul>
-      <div class="cta-row">
-        <a class="btn primary" href="/recipes/cinnamon-roll-crown-cake.html">Get the Full Recipe</a>
-        <a class="btn ghost" href="#videos">Watch the Build</a>
-      </div>
-    </section>
+<!-- ABOUT -->
+<section id="about" class="section container about">
+<div class="panel">
+<h2>About Mind Over Batter</h2>
+<p>Hi, I’m Shirzad — baker, writer, and father. I make bold, original cakes with layered textures, real flavor, and a streak of mischief. The show? I mess up on purpose (mostly), then fix it with technique you can replicate at home.</p>
+</div>
+<div class="panel">
+<h2>What You’ll Get</h2>
+<ul>
+<li>Unique cake builds with step-by-step, metric-first recipes.</li>
+<li>No American buttercream. Ever.</li>
+<li>Honest tips so you nail it the first time.</li>
+</ul>
+</div>
+</section>
 
-    <section id="videos" class="section container">
-      <h2>Latest Videos</h2>
-      <div class="grid">
-        <article class="card">
-          <a href="https://www.youtube.com/watch?v=VIDEO_ID" target="_blank" rel="noopener" class="thumb"></a>
-          <div class="card-body">
-            <h3>Cinnamon Roll Crown Cake</h3>
-            <div class="meta">Recipe • 8 min</div>
-          </div>
-        </article>
-        <article class="card">
-          <a href="#" class="thumb"></a>
-          <div class="card-body">
-            <h3>Hidden Orchard Gateau</h3>
-            <div class="meta">Recipe • 10 min</div>
-          </div>
-        </article>
-        <article class="card">
-          <a href="#" class="thumb"></a>
-          <div class="card-body">
-            <h3>Chocolate Forge Torte</h3>
-            <div class="meta">Recipe • 9 min</div>
-          </div>
-        </article>
-      </div>
-    </section>
 
-    <section id="about" class="section container about">
-      <div class="panel">
-        <h2>About Mind Over Batter</h2>
-        <p>Hi, I’m Shirzad — baker, writer, and father. I make bold, original cakes with layered textures, real flavor, and a streak of mischief. The show? I mess up on purpose (mostly), then fix it with technique you can replicate at home.</p>
-      </div>
-      <div class="panel">
-        <h2>What You’ll Get</h2>
-        <ul>
-          <li>Unique cake builds with step-by-step, metric-first recipes.</li>
-          <li>No American buttercream. Ever.</li>
-          <li>Honest tips so you nail it the first time.</li>
-        </ul>
-      </div>
-    </section>
+<!-- CONTACT / SOCIAL -->
+<section class="section container" id="contact">
+<h2>Say Hello</h2>
+<p>Email: <a href="mailto:hello@mindoverbattervids.com">hello@mindoverbattervids.com</a></p>
+<div class="social">
+<a class="badge" href="https://www.youtube.com/@mindoverbattervids" target="_blank" rel="noopener" aria-label="YouTube">▶ YouTube @mindoverbattervids</a>
+<a class="badge" href="https://www.tiktok.com/@mind.over.batter.vids" target="_blank" rel="noopener" aria-label="TikTok">🎬 TikTok @mind.over.batter.vids</a>
+<a class="badge" href="https://www.instagram.com/mindoverbattercakes" target="_blank" rel="noopener" aria-label="Instagram">📷 Instagram @mindoverbattercakes</a>
+<a class="badge" href="https://www.facebook.com/mindoverbatterbaking/" target="_blank" rel="noopener" aria-label="Facebook">📘 Facebook</a>
+</div>
+</section>
+</main>
 
-    <section class="section container" id="contact">
-      <h2>Say Hello</h2>
-      <p>Email: <a href="mailto:hello@mindoverbattervids.com">hello@mindoverbattervids.com</a></p>
-      <div class="social">
-        <a class="badge" href="https://www.youtube.com/@mindoverbattervids" target="_blank" rel="noopener">▶ YouTube</a>
-        <a class="badge" href="https://www.tiktok.com/@mind.over.batter.vids" target="_blank" rel="noopener">🎬 TikTok</a>
-        <a class="badge" href="https://www.instagram.com/mindoverbattercakes" target="_blank" rel="noopener">📷 Instagram</a>
-        <a class="badge" href="https://www.facebook.com/mindoverbatterbaking/" target="_blank" rel="noopener">📘 Facebook</a>
-      </div>
-    </section>
-  </main>
 
-  <footer>
-    <div class="container" style="display:flex; align-items:center; justify-content:space-between; gap:12px; flex-wrap:wrap;">
-      <span>© <span id="year"></span> Mind Over Batter</span>
-      <span style="opacity:0.8">“Make the miscakes so you don’t have to.”</span>
-    </div>
-  </footer>
+<footer>
+<div class="container footer-inner">
+<span>© <span id="year"></span> Mind Over Batter</span>
+<span class="motto">“Make the miscakes so you don’t have to.”</span>
+</div>
+</footer>
 
-  <script>
-    document.getElementById('year').textContent = new Date().getFullYear();
-  </script>
+
+<script>
+document.getElementById('year').textContent = new Date().getFullYear();
+</script>
 </body>
 </html>
